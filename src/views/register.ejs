@@ -30,8 +30,8 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="name" class="form-control form-control-lg" />
-  
+                  <input type="text" id="name" name="name" class="form-control form-control-lg" />
+                  <small id="errorpas"><%= locals.errors && errors.name? errors.name.msg : null %></small>
                 </div>
               </div>
 
@@ -46,7 +46,7 @@
                 <div class="col-md-9 pe-5">
   
                   <input type="email" name="email" class="form-control form-control-lg" placeholder="example@gmail.com" />
-  
+                  <small id="errorpas"><%= locals.errors && errors.email? errors.email.msg : null %></small>
                 </div>
               </div>
   
@@ -60,8 +60,8 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="country" class="form-control form-control-lg" placeholder="Argentina" />
-  
+                  <input type="text" id="country"name="country" class="form-control form-control-lg" placeholder="Argentina" />
+                  <small id="errorpas"><%= locals.errors && errors.country? errors.country.msg : null %></small>
                 </div>
               </div>
   
@@ -75,8 +75,8 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="password" name="password" class="form-control form-control-lg" >
-  
+                  <input type="password" id="password" name="password" class="form-control form-control-lg" >
+                  <small id="errorpas"><%= locals.errors && errors.password? errors.password.msg : null %></small>
                 </div>
               </div>
   
@@ -88,6 +88,7 @@
                   <h6 class="mb-0">Category</h6>
   
                 </div>
+                
                 <div class="col-md-9 pe-5">
   
                   <input type="radio" name="category" id="admin" value="1" />
@@ -96,6 +97,7 @@
                   <label for="user">User</label>
   
                 </div>
+                <small id="errorpas" style="margin-left: 200px;"><%= locals.errors && errors.category? errors.category.msg : null %></small>
               </div>
   
               <hr class="mx-n3">

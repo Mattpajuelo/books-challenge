@@ -30,8 +30,8 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="email" name="email" class="form-control form-control-lg" placeholder="example@gmail.com" />
-  
+                  <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="example@gmail.com" />
+                  <small id="errorEmai"><%= locals.errors && errors.email? errors.email.msg : null %></small>
                 </div>
               </div>
   
@@ -45,13 +45,14 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="password" name="password" class="form-control form-control-lg" >
-  
+                  <input type="password" id="password" name="password" class="form-control form-control-lg" >
+                  <small id="errorpas"><%= locals.errors && errors.password? errors.password.msg : null %></small>
                 </div>
               </div>
+              <input class="save-pass" name="recordame" type="checkbox"> Mantener la sesión iniciada
   
               <hr class="mx-n3">
-  
+              
               <div class="px-5 py-4">
                 <button type="submit" class="btn btn-primary btn-lg">Login</button>
               </div>
@@ -65,5 +66,8 @@
   </section>
 </div>
 <%- include('partials/footer.ejs') %>
+<script src="/js/loginval.js"></script>
+
+
 </body>
 </html>

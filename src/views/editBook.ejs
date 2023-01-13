@@ -17,21 +17,21 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-9">
   
-          <h1 class="text-white mb-4">Edit book <%= id %> </h1>
+          <h1 class="text-white mb-4">Edit book <%= book.id %> </h1>
   
-          <form action="/books/edit/<%= id %> " method="POST" class="card" style="border-radius: 15px;">
+          <form action="/books/edit/<%= book.id %>?_method=PUT" method="POST" class="card" style="border-radius: 15px;">
             <div class="card-body">
   
               <div class="row align-items-center pt-4 pb-3">
                 <div class="col-md-3 ps-5">
-  
+                  
                   <h6 class="mb-0">Title</h6>
   
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="title" class="form-control form-control-lg" />
-  
+                  <input type="text" id="title" name="title" class="form-control form-control-lg" value="<%= locals.old && old.Titulo? old.Titulo : book.title %>"/>
+                  <small id="errortitle"><%= locals.errors && errors.title? errors.title.msg : null %></small>
                 </div>
               </div>
 
@@ -45,8 +45,8 @@
                 </div>
                 <div class="col-md-9 pe-5">
   
-                  <input type="text" name="cover" class="form-control form-control-lg" />
-  
+                  <input type="text" id="cover" name="cover" class="form-control form-control-lg" value="<%= locals.old && old.Titulo? old.Titulo : book.cover %>"/>
+                  <small id="errorcover"><%= locals.errors && errors.cover? errors.cover.msg : null %></small>
                 </div>
               </div>
   
@@ -59,9 +59,9 @@
   
                 </div>
                 <div class="col-md-9 pe-5">
-  
-                  <input type="text" name="description" class="form-control form-control-lg" />
-  
+                 
+                  <input type="text" id="description" name="description" class="form-control form-control-lg"  value="<%= locals.old && old.Titulo? old.Titulo : book.description %>"/>
+                  <small id="errordes"><%= locals.errors && errors.description? errors.description.msg : null %></small>
                 </div>
               </div>
   
@@ -80,5 +80,6 @@
   </section>
 </div>
 <%- include('partials/footer.ejs') %>
+<script src="/js/bookval.js"></script>
 </body>
 </html>
